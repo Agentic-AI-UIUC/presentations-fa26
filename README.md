@@ -130,4 +130,4 @@ in seconds. Bumping the version invalidates the cache and recompiles once.
 
 | Deck | Covers |
 |---|---|
-| `module01` | Agentic AI foundations, prompting, and tool calling. What an LLM does, tokens and sampling, agent vs workflow, the harness, the ReAct loop, context and failure modes, six prompting rules, tool calling and structured outputs, and a live 40-line agent demo. ~80 pages with reveals; 60 minutes if you keep moving, and the cut order is in the first slide's speaker note. |
+| `module01` | Agentic AI foundations, prompting, and tool calling. Opens with why agents now (the 2022-26 arc, the plateau argument, where they already work), then what an LLM does, tokens and sampling, agent vs workflow, the harness, the ReAct loop, context and failure modes, six prompting rules, tool calling and structured outputs, and a live 40-line agent demo. ~90 pages with reveals; 60 minutes if you keep moving, and the cut order is in the first slide's speaker note. |

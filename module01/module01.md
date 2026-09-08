@@ -34,7 +34,11 @@ TONIGHT
 
 <span class="accent">**05**</span>
 
+<span class="accent">**06**</span>
+
 <!-- column: 1 -->
+
+**Why agents, why now** — <span class="muted">how we got here, and where they already work</span>
 
 **What an agent actually is** — <span class="muted">tokens, the four words people confuse, and where the line is</span>
 
@@ -62,13 +66,126 @@ TONIGHT
 
 **An agent is not a smarter model. An agent is a model you put inside a loop and gave hands.**
 
-<!-- speaker_note: 60 min for merged weeks 1+2. Budget is 15 / 10 / 13 / 14 / 6 plus Q&A. Cut in this order if long - autonomy ladder, then anti-patterns, then how many and how big. Thursday Sep 10 is Business Workflow Automation 101, laptops open. -->
+<!-- speaker_note: 60 min. Budget is 6 / 12 / 9 / 12 / 13 / 5 plus Q&A. Part 01 is motivation, so keep it moving - two minutes on the timeline, not five. Cut in this order if long - autonomy ladder, then anti-patterns, then how many and how big. Thursday Sep 10 is Business Workflow Automation 101, laptops open. -->
 
 <!-- end_slide -->
 
 <!-- jump_to_middle -->
 
 <span class="kicker">/// PART 01</span>
+
+WHY AGENTS, WHY NOW
+===
+
+<!-- end_slide -->
+
+<span class="kicker">/// HOW WE GOT HERE</span>
+
+FOUR YEARS, FOUR SHIFTS
+===
+
+| | The shift | What changed |
+|---|---|---|
+| **2022** | ChatGPT | AI became something you talk to |
+| **2023** | First attempts at agency | AutoGPT and BabyAGI try the loop, too early |
+| **2024** | Reasoning engines | Think before answering · long context |
+| **2025–26** | The agentic era | Tool use standardized · agents in the editor |
+
+<!-- pause -->
+
+<!-- new_line -->
+
+> Notice the pattern: **the model got better, then the scaffolding around it got better.** 2023 tried agents before the pieces existed. Everything you build this semester exists because the pieces now do.
+
+<!-- speaker_note: Do not linger. Two minutes. The point is the pattern, not the trivia. -->
+
+<!-- end_slide -->
+
+<span class="kicker">/// WHY NOW</span>
+
+THE MODEL STOPPED BEING THE BOTTLENECK
+===
+
+For years, the way to get a better AI was to train a bigger model.
+
+<!-- new_line -->
+
+**That is slowing down.** The good training text is largely used up, and each new frontier model costs far more to train while gaining less.
+
+<!-- pause -->
+
+<!-- new_lines: 2 -->
+
+So the leverage moved. If the model is roughly fixed, what is left is **everything you wrap around it**:
+
+<!-- new_line -->
+
+<span class="accent">**1.**</span>  What you put in its **context**
+
+<span class="accent">**2.**</span>  What **tools** you give it
+
+<span class="accent">**3.**</span>  What **loop** it runs in
+
+<span class="accent">**4.**</span>  How you **check** its output
+
+<!-- pause -->
+
+<!-- new_line -->
+
+> Those four are the rest of the semester. They are also tonight's thesis: **the intelligence you ship lives in the harness, not the model.**
+
+<!-- speaker_note: Present the slowdown as an argument, not settled fact - someone will disagree. The consequence holds either way. -->
+
+<!-- end_slide -->
+
+<span class="kicker">/// NOT HYPOTHETICAL</span>
+
+WHERE AGENTS ALREADY WORK
+===
+
+<!-- column_layout: [1, 1, 1, 1] -->
+
+<!-- column: 0 -->
+
+**CODING**
+
+<span class="muted">Claude Code, Cursor, Codex. The clearest win: a verifiable environment. Tests either pass or they do not, so the loop gets real feedback.</span>
+
+<!-- column: 1 -->
+
+**SUPPORT + OPS**
+
+<span class="muted">Ticket triage, intake, routing. High volume, tolerant of a human check before anything ships.</span>
+
+<!-- column: 2 -->
+
+**VOICE**
+
+<span class="muted">Scheduling, intake, reminders. Latency is brutal and the failure modes are public.</span>
+
+<!-- column: 3 -->
+
+**BROWSERS + PAYMENTS**
+
+<span class="muted">Agents that navigate for you, and the early rails for agents that transact. Newest and least settled.</span>
+
+<!-- reset_layout -->
+
+<!-- pause -->
+
+<!-- new_line -->
+
+<span class="badge"> BUILT BY THIS CLUB </span>   <span class="muted">Medical voice agent · Resrv, the autonomous queue at Siebel · Metalist · Aegis</span>
+
+<!-- new_line -->
+
+> The pattern in every one that works: **a bounded task, a real feedback signal, and a human in the loop where it matters.** Where those are missing, agents are still a demo.
+
+<!-- end_slide -->
+
+<!-- jump_to_middle -->
+
+<span class="kicker">/// PART 02</span>
 
 WHAT IS AN AGENT?
 ===
@@ -456,7 +573,7 @@ Every safety property your system has, the harness enforces — because **the mo
 
 <!-- jump_to_middle -->
 
-<span class="kicker">/// PART 02</span>
+<span class="kicker">/// PART 03</span>
 
 THE LOOP
 ===
@@ -650,7 +767,7 @@ FIVE FAILURE MODES YOU WILL HIT
 
 <!-- jump_to_middle -->
 
-<span class="kicker">/// PART 03</span>
+<span class="kicker">/// PART 04</span>
 
 PROMPTING BASICS
 ===
@@ -1028,7 +1145,7 @@ THINGS THAT DO NOT WORK
 
 <!-- jump_to_middle -->
 
-<span class="kicker">/// PART 04</span>
+<span class="kicker">/// PART 05</span>
 
 TOOL CALLING + STRUCTURED OUTPUTS
 ===
@@ -1274,7 +1391,7 @@ TOOL CALLING *IS* STRUCTURED OUTPUT
 
 <!-- jump_to_middle -->
 
-<span class="kicker">/// PART 05</span>
+<span class="kicker">/// PART 06</span>
 
 DEMO: 40 LINES
 ===
@@ -1358,7 +1475,7 @@ WHAT YOU JUST SAW
 
 <!-- jump_to_middle -->
 
-<span class="kicker">/// PART 06</span>
+<span class="kicker">/// PART 07</span>
 
 WHAT'S NEXT
 ===
