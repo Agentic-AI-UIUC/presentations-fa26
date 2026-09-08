@@ -19,9 +19,11 @@ snippet:
 export:
   # Fixed page size makes exports reproducible and, critically, lets the
   # export run with no TTY attached — which is what GitHub Actions gives us.
+  # Narrow on purpose: the browser scales the page to fit, so fewer columns
+  # means bigger type. The SCD screens are small.
   dimensions:
-    columns: 160
-    rows: 46
+    columns: 110
+    rows: 33
   # Each `<!-- pause -->` becomes its own page, so the exported deck reveals
   # the same way the live one does.
   pauses: new_slide

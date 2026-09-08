@@ -160,6 +160,9 @@ and, in another terminal, `presenterm --listen-speaker-notes`.
 
 ## House style
 
+The five principles in `CLAUDE.md` come first: fewer words, visuals over text, a
+market update slide, real business examples, big type. Then:
+
 - Slide titles: **caps, short, a claim not a label.** "WORKFLOW vs AGENT" beats
   "About Workflows".
 - One idea per slide. If it needs two block quotes, it is two slides.

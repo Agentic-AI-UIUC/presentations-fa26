@@ -8,6 +8,11 @@ for deck in $(decks); do
   dir="$(dirname "$deck")"
   name="$(basename "$dir")"
 
+  if [ -f "$dir/export.py" ]; then
+    echo "── export self-check $name"
+    python3 "$dir/export.py" --check || { echo "   FAILED"; status=1; }
+  fi
+
   for demo in "$dir"/demo/*.py; do
     [ -e "$demo" ] || continue
     echo "── self-check $name/$(basename "$demo")"

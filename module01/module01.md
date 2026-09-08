@@ -1448,7 +1448,7 @@ THE EIGHT THINGS
 
 <span class="kicker">/// BEFORE THURSDAY</span>
 
-HOMEWORK
+TO FURTHER YOUR UNDERSTANDING
 ===
 
 <!-- column_layout: [1, 1] -->
@@ -1457,13 +1457,11 @@ HOMEWORK
 
 <span class="badge"> DO </span>
 
-**1. Install Claude Code.** <span class="muted">Thursday is laptop-open. Show up ready.</span>
+**1. Find the workflow.** <span class="muted">Pick a repetitive task you actually do. Write the steps out by hand. Bring it Thursday; that is your build target.</span>
 
-**2. Find the workflow.** <span class="muted">Pick a repetitive task you actually do. Write the steps out by hand. Bring it Thursday; that is your build target.</span>
+**2. Break a prompt on purpose.** <span class="muted">Write a vague prompt, run it 5 times, watch the outputs diverge. Then fix it with Rule 01.</span>
 
-**3. Break a prompt on purpose.** <span class="muted">Write a vague prompt, run it 5 times, watch the outputs diverge. Then fix it with Rule 01.</span>
-
-**4. Write one tool schema.** <span class="muted">For the workflow in #2, write the description a model would need. It is harder than it looks.</span>
+**3. Write one tool schema.** <span class="muted">For the workflow in #2, write the description a model would need. It is harder than it looks.</span>
 
 <!-- column: 1 -->
 

@@ -12,24 +12,24 @@ default:
 
 intro_slide:
   title:
-    alignment: left
+    alignment: center
     colors:
       foreground: palette:text
     font_size: 2
   sub_title:
-    alignment: left
+    alignment: center
     colors:
       foreground: palette:muted
   event:
-    alignment: left
+    alignment: center
     colors:
       foreground: palette:orange
   location:
-    alignment: left
+    alignment: center
     colors:
       foreground: palette:muted
   date:
-    alignment: left
+    alignment: center
     colors:
       foreground: palette:orange
   footer: true

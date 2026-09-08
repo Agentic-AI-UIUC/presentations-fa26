@@ -11,6 +11,7 @@ are what works in the room.
 1. **Fewer words.** People come to listen, not read. A slide carries one visual
    and one claim. Everything else goes in the speaker note. Content slides:
    under 50 words of prose. Titles: five words or fewer.
+   Presenter directions belong in notes, not on slides. No em dashes in decks.
 2. **Visuals over text.** Ask "what is the picture?" before writing a sentence.
    ASCII diagrams, tables, and comparisons beat paragraphs. A slide with no
    visual needs a reason.

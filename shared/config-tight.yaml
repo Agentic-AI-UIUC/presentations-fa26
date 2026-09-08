@@ -1,9 +1,9 @@
-# Smallest terminal we are willing to present at. If a slide fits here, it fits
-# on the projector at any reasonable font size.
+# Smallest terminal we are willing to present at: a projector with the font
+# turned well up. If a slide fits here, it fits anywhere.
 export:
   dimensions:
-    columns: 100
-    rows: 30
+    columns: 90
+    rows: 26
 snippet:
   exec:
     enable: true

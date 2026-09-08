@@ -9,7 +9,7 @@ presentations-fa26/
 ├── shared/
 │   ├── theme/agentic-ai.yaml   brand theme — colors, headings, footer
 │   ├── config.yaml             presenterm config (export size, snippet exec)
-│   ├── config-tight.yaml       100x30 — the overflow check that matters
+│   ├── config-tight.yaml       90x26 — the overflow check that matters
 │   └── assets/                 logo and shared images
 ├── template/
 │   ├── MODULE_TEMPLATE.md      skeleton for a new lecture
@@ -56,6 +56,10 @@ scripts/present.sh 01 --publish-speaker-notes
 presenterm --listen-speaker-notes      # in another terminal
 ```
 
+**Turn the font up before you start.** The SCD screens are small. Zoom the terminal
+until it is about 90–100 columns wide (`Cmd +` in Ghostty; check with `tput cols`).
+Every deck is validated to fit at 90x26, so nothing will fall below the fold.
+
 Ghostty and kitty render this best — they support the font-size protocol, so slide
 titles come out large. Other terminals degrade to normal-size text and still work.
 
@@ -75,7 +79,7 @@ scripts/check.sh
 ```
 
 Parses every deck, runs each demo's self-check, and validates overflow twice — at
-export size and at 100x30, the smallest terminal worth presenting on. Overflow is
+export size (110x33) and at 90x26, a projector with the font turned well up. Overflow is
 the failure you cannot see until you are on stage and the room's projector is not
 your 32-inch monitor.
 
@@ -89,6 +93,12 @@ scripts/serve.sh 3000     # any port
 Plain `python3 -m http.server` over the `site/` directory. There is deliberately
 no framework here: the site is two generated pages and a favicon, and
 `build-site.sh` is the whole static-site generator. Re-run after editing a deck.
+
+Module 01's `export.py` post-processes the browser deck with a centered canvas,
+an SVG title diagram, a linked website, and a progress bar before the slide count.
+`build-site.sh` applies it automatically; a raw presenterm export will not include
+these enhancements. `python3 module01/export.py` regenerates the standalone
+`module01/deck.html` with the same settings. Its self-check runs in `scripts/check.sh`.
 
 ## Deployment
 

@@ -22,41 +22,41 @@ LINKTREE='<a class="icon" href="https://linktr.ee/agenticaiuiuc" target="_blank"
 css() {
 cat <<'CSS'
 <style>
-  :root{--bg:#0d0d0d;--card:#1a1a1a;--border:#2e2e2e;--text:#f2f2f2;--muted:#9a9a9a;--dim:#6b6b6b;--orange:#f25c14}
+  :root{--bg:#0d0d0d;--card:#1a1a1a;--border:#2e2e2e;--text:#f2f2f2;--muted:#9a9a9a;--dim:#6b6b6b;--orange:#f25c14;
+        --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+        --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);
-       font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+  html{font-size:clamp(15px,1.05vw,21px)}
+  body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.5 var(--sans);min-height:100vh}
   a{color:inherit}
-  .wrap{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
-  .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;
-       border-bottom:1px solid var(--border);padding-bottom:16px;
-       font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
+  .wrap{width:min(100% - 2*clamp(20px,4vw,72px),1500px);margin:0 auto;min-height:100vh;
+        display:flex;flex-direction:column;padding:clamp(32px,4vw,72px) 0 clamp(28px,3vw,48px)}
+  .bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;
+       border-bottom:1px solid var(--border);padding-bottom:1rem;
+       font:600 .8rem/1 var(--mono);letter-spacing:.08em}
   .bar a{color:var(--dim);text-decoration:none}
   .bar a:hover{color:var(--orange)}
+  .kicker{color:var(--orange);font:600 .8rem/1 var(--mono);letter-spacing:.12em;margin:3.2rem 0 .75rem}
+  h1{font-size:clamp(2.2rem,5vw,5rem);line-height:.98;letter-spacing:-.02em;margin:0 0 .8rem;text-transform:uppercase}
+  .lede{color:var(--muted);font-size:1.15rem;margin:0 0 2.2rem;max-width:62ch}
+  .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,22rem),1fr))}
+  .card{display:block;background:var(--card);border:1px solid var(--border);border-radius:.75rem;
+        padding:1.5rem;text-decoration:none;transition:border-color .15s,transform .15s}
+  .card:hover{border-color:var(--orange);transform:translateY(-2px)}
+  .card h2{font-size:1.2rem;margin:.3rem 0 .5rem;letter-spacing:-.01em}
+  .card p{color:var(--muted);font-size:.9rem;margin:0}
+  .cta{display:inline-block;background:var(--orange);color:#0d0d0d;text-decoration:none;
+       border-radius:.5rem;padding:1rem 1.75rem;font:700 .85rem/1 var(--mono);letter-spacing:.08em}
+  .cta:hover{filter:brightness(1.1)}
   .icon{display:flex;color:var(--dim)}
   .icon:hover{color:var(--orange)}
-  .icon svg{width:17px;height:17px;display:block}
-  .kicker{color:var(--orange);font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
-          letter-spacing:.12em;margin:56px 0 12px}
-  h1{font-size:clamp(34px,6vw,60px);line-height:.98;letter-spacing:-.02em;margin:0 0 14px;text-transform:uppercase}
-  .lede{color:var(--muted);font-size:18px;margin:0 0 36px;max-width:62ch}
-  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
-  .card{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;
-        padding:24px;text-decoration:none;transition:border-color .15s,transform .15s}
-  .card:hover{border-color:var(--orange);transform:translateY(-2px)}
-  .card h2{font-size:19px;margin:6px 0 8px;letter-spacing:-.01em}
-  .card p{color:var(--muted);font-size:14px;margin:0}
-  .cta{display:inline-block;background:var(--orange);color:#0d0d0d;text-decoration:none;
-       border-radius:8px;padding:16px 28px;font:700 14px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
-       letter-spacing:.08em}
-  .cta:hover{filter:brightness(1.1)}
-  .hint{color:var(--dim);font-size:13px;margin-top:16px}
-  footer{display:flex;justify-content:space-between;align-items:center;gap:16px;
-         color:var(--dim);border-top:1px solid var(--border);margin-top:64px;padding-top:16px;
-         font:11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
-  footer .socials{display:flex;align-items:center;gap:14px}
+  .icon svg{width:1.1rem;height:1.1rem;display:block}
+  footer{margin-top:auto;padding-top:1rem;border-top:1px solid var(--border);
+         display:flex;justify-content:space-between;align-items:center;gap:1rem;
+         color:var(--dim);font:.7rem/1 var(--mono);letter-spacing:.08em}
   footer a{color:inherit;text-decoration:none}
   footer a:hover{color:var(--orange)}
+  footer .socials{display:flex;align-items:center;gap:.9rem}
 </style>
 CSS
 }
@@ -72,6 +72,10 @@ for deck in $(decks); do
 
   (cd "$dir" && "$PRESENTERM" -c "$CONFIG" -x --image-protocol ascii-blocks \
       --export-html -o "$OUT/$name/deck.html" "$(basename "$deck")" </dev/null)
+
+  if [ -f "$dir/export.py" ]; then
+    python3 "$dir/export.py" "$OUT/$name/deck.html"
+  fi
 
   title=$(meta "$deck" title);   sub=$(meta "$deck" sub_title)
   # "MODULE 01 · Foo" -> "Foo"; the kicker above the headline already says which module.
@@ -94,7 +98,6 @@ HTML
 <h1>${headline:-$name}</h1>
 <p class="lede">${sub:-}</p>
 <a class="cta" href="deck.html">OPEN THE DECK →</a>
-<p class="hint">Arrow keys to advance. Exported straight from the terminal deck we present from.</p>
 <footer><span>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></span><span class="socials">$INSTAGRAM$LINKEDIN$LINKTREE</span></footer>
 </div></body></html>
 HTML
@@ -118,6 +121,7 @@ HTML
 <h1>Lecture decks</h1>
 <p class="lede">Our weekly lectures can be viewed below!</p>
 <div class="grid">$cards</div>
+<div style="height:4rem"></div>
 <footer><span>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></span><span class="socials">$INSTAGRAM$LINKEDIN$LINKTREE</span></footer>
 </div></body></html>
 HTML
