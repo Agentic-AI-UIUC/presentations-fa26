@@ -43,7 +43,6 @@ cat <<'CSS'
   .card:hover{border-color:var(--orange);transform:translateY(-2px)}
   .card h2{font-size:19px;margin:6px 0 8px;letter-spacing:-.01em}
   .card p{color:var(--muted);font-size:14px;margin:0}
-  .meta{color:var(--orange);font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em}
   .facts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;padding:0;list-style:none}
   .facts li{background:var(--card);border:1px solid var(--border);border-radius:999px;
             padding:8px 16px;color:var(--muted);
@@ -107,7 +106,7 @@ HTML
 HTML
   } > "$OUT/$name/index.html"
 
-  cards+="<a class=\"card\" href=\"$name/\"><div class=\"meta\">${date:-}</div><h2>${title:-$name}</h2><p>${sub:-}</p></a>"
+  cards+="<a class=\"card\" href=\"$name/\"><h2>${title:-$name}</h2><p>${sub:-}</p></a>"
 done
 
 # Gallery.
