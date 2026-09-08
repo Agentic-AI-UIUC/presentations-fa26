@@ -18,7 +18,8 @@ presentations-fa26/
 │   ├── present.sh NN           present a module
 │   ├── new-module.sh NN "..."  scaffold a module from the template
 │   ├── check.sh                parse decks, catch overflow, run demo self-checks
-│   └── build-site.sh           export every deck to site/moduleNN/
+│   ├── build-site.sh           export every deck to site/moduleNN/
+│   └── serve.sh                build + serve the site on localhost
 ├── module01/
 │   ├── module01.md
 │   └── demo/mini_agent.py
@@ -77,6 +78,17 @@ Parses every deck, runs each demo's self-check, and validates overflow twice —
 export size and at 100x30, the smallest terminal worth presenting on. Overflow is
 the failure you cannot see until you are on stage and the room's projector is not
 your 32-inch monitor.
+
+## Preview the site locally
+
+```bash
+scripts/serve.sh          # builds, then serves on http://localhost:8080
+scripts/serve.sh 3000     # any port
+```
+
+Plain `python3 -m http.server` over the `site/` directory. There is deliberately
+no framework here: the site is two generated pages and a favicon, and
+`build-site.sh` is the whole static-site generator. Re-run after editing a deck.
 
 ## Deployment
 
