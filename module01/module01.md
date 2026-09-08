@@ -1,9 +1,9 @@
 ---
 title: "MODULE 01 · AGENTIC AI FOUNDATIONS, PROMPTING, & TOOL CALLING"
-sub_title: "Agents are a loop, not a model. Weeks 1 and 2, merged into one night."
+sub_title: "What an agent actually is, why the loop is the whole idea, and how to write the prompts and tools it acts on."
 event: "AGENTIC AI @ UIUC · FALL 2026 LECTURE SERIES"
 location: "Siebel Center for Design"
-date: "MON SEP 08 · 7:00–8:00 PM"
+date: "MON SEP 08"
 author: "Anirudh Konidala · President"
 theme:
   path: ../shared/theme/agentic-ai.yaml
@@ -18,7 +18,7 @@ options:
 TONIGHT
 ===
 
-<span class="muted">Info night covered the club, so weeks 1 and 2 are merged into tonight. Dense hour. Slides go up after — do not try to transcribe.</span>
+<span class="muted">Dense hour, and it builds — every part depends on the one before it. Slides go up right after, so do not try to transcribe.</span>
 
 <!-- new_line -->
 
@@ -1433,10 +1433,6 @@ HOMEWORK
 
 WHERE THIS GOES
 ===
-
-<span class="muted">Tonight covered weeks 1 and 2, so the rest of the series moves up a week.</span>
-
-<!-- new_line -->
 
 | Monday lecture | What it unlocks |
 |---|---|

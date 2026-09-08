@@ -130,4 +130,4 @@ in seconds. Bumping the version invalidates the cache and recompiles once.
 
 | Deck | Covers |
 |---|---|
-| `module01` | Agentic AI foundations, prompting, and tool calling — **weeks 1 and 2 merged**, since info night already covered the club intro. ~82 pages with reveals; 60 minutes if you keep moving. Cut order is in the first slide's speaker note. |
+| `module01` | Agentic AI foundations, prompting, and tool calling. What an LLM does, tokens and sampling, agent vs workflow, the harness, the ReAct loop, context and failure modes, six prompting rules, tool calling and structured outputs, and a live 40-line agent demo. ~80 pages with reveals; 60 minutes if you keep moving, and the cut order is in the first slide's speaker note. |
