@@ -33,9 +33,9 @@ cat <<'CSS'
        font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
   .bar a{color:var(--dim);text-decoration:none}
   .bar a:hover{color:var(--orange)}
-  .bar .left,.bar .right{display:flex;align-items:center;gap:14px}
-  .bar .icon{display:flex;color:var(--dim)}
-  .bar .icon svg{width:17px;height:17px;display:block}
+  .icon{display:flex;color:var(--dim)}
+  .icon:hover{color:var(--orange)}
+  .icon svg{width:17px;height:17px;display:block}
   .kicker{color:var(--orange);font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
           letter-spacing:.12em;margin:56px 0 12px}
   h1{font-size:clamp(34px,6vw,60px);line-height:.98;letter-spacing:-.02em;margin:0 0 14px;text-transform:uppercase}
@@ -51,8 +51,10 @@ cat <<'CSS'
        letter-spacing:.08em}
   .cta:hover{filter:brightness(1.1)}
   .hint{color:var(--dim);font-size:13px;margin-top:16px}
-  footer{color:var(--dim);border-top:1px solid var(--border);margin-top:64px;padding-top:16px;
+  footer{display:flex;justify-content:space-between;align-items:center;gap:16px;
+         color:var(--dim);border-top:1px solid var(--border);margin-top:64px;padding-top:16px;
          font:11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
+  footer .socials{display:flex;align-items:center;gap:14px}
   footer a{color:inherit;text-decoration:none}
   footer a:hover{color:var(--orange)}
 </style>
@@ -87,13 +89,13 @@ HTML
     css
     cat <<HTML
 </head><body><div class="wrap">
-<div class="bar"><a href="../">← ALL LECTURES</a><span class="right"><span>$SITE_TERM</span>$INSTAGRAM$LINKEDIN$LINKTREE</span></div>
+<div class="bar"><a href="../">← ALL LECTURES</a><span>$SITE_TERM</span></div>
 <div class="kicker">/// ${name/module/MODULE }</div>
 <h1>${headline:-$name}</h1>
 <p class="lede">${sub:-}</p>
 <a class="cta" href="deck.html">OPEN THE DECK →</a>
 <p class="hint">Arrow keys to advance. Exported straight from the terminal deck we present from.</p>
-<footer>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></footer>
+<footer><span>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></span><span class="socials">$INSTAGRAM$LINKEDIN$LINKTREE</span></footer>
 </div></body></html>
 HTML
   } > "$OUT/$name/index.html"
@@ -111,12 +113,12 @@ HTML
   css
   cat <<HTML
 </head><body><div class="wrap">
-<div class="bar"><span class="left"><strong>AGENTIC AI @ UIUC</strong>$INSTAGRAM$LINKEDIN$LINKTREE</span><span>$SITE_TERM</span></div>
+<div class="bar"><strong>AGENTIC AI @ UIUC</strong><span>$SITE_TERM</span></div>
 <div class="kicker">/// LECTURE SERIES</div>
 <h1>Lecture decks</h1>
 <p class="lede">Our weekly lectures can be viewed below!</p>
 <div class="grid">$cards</div>
-<footer>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></footer>
+<footer><span>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></span><span class="socials">$INSTAGRAM$LINKEDIN$LINKTREE</span></footer>
 </div></body></html>
 HTML
 } > "$OUT/index.html"
