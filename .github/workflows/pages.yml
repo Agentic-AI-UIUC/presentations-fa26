@@ -1,0 +1,70 @@
+name: Deploy lecture decks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  PRESENTERM_VERSION: 0.16.1
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - id: cache-presenterm
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/presenterm
+          key: presenterm-${{ runner.os }}-${{ env.PRESENTERM_VERSION }}
+
+      - if: steps.cache-presenterm.outputs.cache-hit != 'true'
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install presenterm
+        if: steps.cache-presenterm.outputs.cache-hit != 'true'
+        run: cargo install presenterm --locked --version "$PRESENTERM_VERSION"
+
+      - name: Verify presenterm
+        run: |
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+          "$HOME/.cargo/bin/presenterm" --version
+
+      - name: Check decks
+        # Parses every deck, fails on overflowing slides, runs demo self-checks.
+        run: ./scripts/check.sh
+
+      - name: Build site
+        run: ./scripts/build-site.sh
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
