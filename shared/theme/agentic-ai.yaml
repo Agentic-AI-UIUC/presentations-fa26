@@ -32,11 +32,6 @@ intro_slide:
     alignment: left
     colors:
       foreground: palette:orange
-  author:
-    alignment: left
-    colors:
-      foreground: palette:muted
-    positioning: below_title
   footer: true
 
 slide_title:

@@ -3,8 +3,7 @@ title: "MODULE NN · TITLE IN CAPS"
 sub_title: "One line that says what changes in the listener's head tonight."
 event: "AGENTIC AI @ UIUC · FALL 2026 LECTURE SERIES"
 location: "Siebel Center for Design"
-date: "MON MMM DD"
-author: "Your Name · Role"
+date: "DAY MMM DD"
 theme:
   path: ../shared/theme/agentic-ai.yaml
 options:

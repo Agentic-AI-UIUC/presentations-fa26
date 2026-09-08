@@ -1,10 +1,8 @@
 ---
 title: "MODULE 01 · AGENTIC AI FOUNDATIONS, PROMPTING, & TOOL CALLING"
-sub_title: "What an agent actually is, why the loop is the whole idea, and how to write the prompts and tools it acts on."
+sub_title: "What an agent actually is, why the loop is the whole idea, and how to write the prompts and tools it acts on!"
 event: "AGENTIC AI @ UIUC · FALL 2026 LECTURE SERIES"
-location: "Siebel Center for Design"
-date: "MON SEP 08"
-author: "Anirudh Konidala · President"
+date: "TUE SEP 08"
 theme:
   path: ../shared/theme/agentic-ai.yaml
 options:
@@ -1434,7 +1432,7 @@ HOMEWORK
 WHERE THIS GOES
 ===
 
-| Monday lecture | What it unlocks |
+| Upcoming lecture | What it unlocks |
 |---|---|
 | **RAG + advanced RAG** <span class="accent">— next week</span> | Agents that know *your* data |
 | Memory — short, long, hybrid | Agents that persist across sessions |
