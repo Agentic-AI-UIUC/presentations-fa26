@@ -10,6 +10,7 @@
 source "$(dirname "$0")/_common.sh"
 OUT="$ROOT/site"
 rm -rf "$OUT"; mkdir -p "$OUT"
+cp "$ROOT/shared/assets/favicon.png" "$OUT/favicon.png"
 
 SITE_NAME="Agentic AI @ UIUC"
 SITE_TERM="FALL 2026"
@@ -81,6 +82,7 @@ for deck in $(decks); do
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title:-$name} · $SITE_NAME</title>
 <meta name="description" content="${sub:-}">
+<link rel="icon" type="image/png" href="../favicon.png">
 HTML
     css
     cat <<HTML
@@ -104,6 +106,7 @@ done
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lectures · $SITE_NAME</title>
+<link rel="icon" type="image/png" href="favicon.png">
 HTML
   css
   cat <<HTML
