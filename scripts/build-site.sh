@@ -36,17 +36,13 @@ cat <<'CSS'
   .kicker{color:var(--orange);font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
           letter-spacing:.12em;margin:56px 0 12px}
   h1{font-size:clamp(34px,6vw,60px);line-height:.98;letter-spacing:-.02em;margin:0 0 14px;text-transform:uppercase}
-  .lede{color:var(--muted);font-size:18px;margin:0 0 40px;max-width:62ch}
+  .lede{color:var(--muted);font-size:18px;margin:0 0 36px;max-width:62ch}
   .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
   .card{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;
         padding:24px;text-decoration:none;transition:border-color .15s,transform .15s}
   .card:hover{border-color:var(--orange);transform:translateY(-2px)}
   .card h2{font-size:19px;margin:6px 0 8px;letter-spacing:-.01em}
   .card p{color:var(--muted);font-size:14px;margin:0}
-  .facts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;padding:0;list-style:none}
-  .facts li{background:var(--card);border:1px solid var(--border);border-radius:999px;
-            padding:8px 16px;color:var(--muted);
-            font:11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
   .cta{display:inline-block;background:var(--orange);color:#0d0d0d;text-decoration:none;
        border-radius:8px;padding:16px 28px;font:700 14px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
        letter-spacing:.08em}
@@ -75,9 +71,7 @@ for deck in $(decks); do
   title=$(meta "$deck" title);   sub=$(meta "$deck" sub_title)
   # "MODULE 01 · Foo" -> "Foo"; the kicker above the headline already says which module.
   headline=$(printf '%s' "$title" | sed 's/^MODULE *[0-9]* *· *//')
-  date=$(meta "$deck" date);     author=$(meta "$deck" author)
-  location=$(meta "$deck" location)
-  pages=$(grep -c 'class="container"' "$OUT/$name/deck.html" || true)
+  date=$(meta "$deck" date)
 
   # Per-module landing page.
   { cat <<HTML
@@ -93,12 +87,6 @@ HTML
 <div class="kicker">/// ${name/module/MODULE }</div>
 <h1>${headline:-$name}</h1>
 <p class="lede">${sub:-}</p>
-<ul class="facts">
-  ${date:+<li>$date</li>}
-  ${location:+<li>$location</li>}
-  ${author:+<li>$author</li>}
-  ${pages:+<li>$pages PAGES</li>}
-</ul>
 <a class="cta" href="deck.html">OPEN THE DECK →</a>
 <p class="hint">Arrow keys to advance. Exported straight from the terminal deck we present from.</p>
 <footer>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></footer>
