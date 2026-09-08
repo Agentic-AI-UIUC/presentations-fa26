@@ -9,62 +9,30 @@ options:
   end_slide_shorthand: false
 ---
 
-<!-- end_slide -->
-
 <span class="kicker">/// RUN OF SHOW</span>
 
 TONIGHT
 ===
 
-<span class="muted">Dense hour, and it builds — every part depends on the one before it. Slides go up right after, so do not try to transcribe.</span>
+<span class="accent">**01**</span>  **Why agents, why now** · <span class="muted">Real deployments</span>
 
-<!-- new_line -->
+<span class="accent">**02**</span>  **What is an agent?** · <span class="muted">Tokens and control flow</span>
 
-<!-- column_layout: [1, 3] -->
+<span class="accent">**03**</span>  **The loop** · <span class="muted">Think, act, observe</span>
 
-<!-- column: 0 -->
+<span class="accent">**04**</span>  **Prompting basics** · <span class="muted">Six rules</span>
 
-<span class="accent">**01**</span>
+<span class="accent">**05**</span>  **Tools + structured outputs** · <span class="muted">Real-world actions</span>
 
-<span class="accent">**02**</span>
-
-<span class="accent">**03**</span>
-
-<span class="accent">**04**</span>
-
-<span class="accent">**05**</span>
-
-<span class="accent">**06**</span>
-
-<!-- column: 1 -->
-
-**Why agents, why now** — <span class="muted">how we got here, and where they already work</span>
-
-**What an agent actually is** — <span class="muted">tokens, the four words people confuse, and where the line is</span>
-
-**The loop** — <span class="muted">think, act, observe, repeat — and the five ways it breaks</span>
-
-**Prompting basics** — <span class="muted">six rules that survive contact with reality</span>
-
-**Tool calling + structured outputs** — <span class="muted">how an agent touches the real world</span>
-
-**Live demo** — <span class="muted">an agent in 40 lines, no framework</span>
-
-<!-- reset_layout -->
+<span class="accent">**06**</span>  **Live demo** · <span class="muted">Forty lines, no framework</span>
 
 <!-- pause -->
 
 <!-- new_line -->
 
-> **Interrupt me.** No ML background needed — if you can read a Python for-loop you can build an agent. By the end you should be able to look at any "AI product" and say what it is: a chatbot, a workflow, or an agent, and why that matters.
+> **An agent is a model in a loop, with tools.**
 
-<!-- new_line -->
-
-<span class="badge"> THE ONE THING TO REMEMBER TONIGHT </span>
-
-<!-- new_line -->
-
-**An agent is not a smarter model. An agent is a model you put inside a loop and gave hands.**
+<!-- speaker_note: No ML background needed - reading a Python for-loop is enough. The hour builds on itself, and slides go up afterward, so listen rather than transcribe. Cover why agents now and real deployments; tokens and the four vocabulary terms; the loop and its five failure modes; six prompting rules; tool calling and structured outputs; then the forty-line demo without a framework. By the end, students should distinguish a chatbot, workflow, and agent. An agent is not a smarter model - it is a model in a loop, with tools. -->
 
 <!-- speaker_note: 60 min. Budget is 6 / 12 / 9 / 12 / 13 / 5 plus Q&A. Part 01 is motivation, so keep it moving - two minutes on the timeline, not five. Cut in this order if long - autonomy ladder, then anti-patterns, then how many and how big. Thursday Sep 10 is Business Workflow Automation 101, laptops open. -->
 
@@ -95,9 +63,9 @@ FOUR YEARS, FOUR SHIFTS
 
 <!-- new_line -->
 
-> Notice the pattern: **the model got better, then the scaffolding around it got better.** 2023 tried agents before the pieces existed. Everything you build this semester exists because the pieces now do.
+> **Better models made better agent systems possible.**
 
-<!-- speaker_note: Do not linger. Two minutes. The point is the pattern, not the trivia. -->
+<!-- speaker_note: Two minutes on the pattern, not the trivia. The model got better, then the scaffolding around it got better. In 2023, people tried agents before the pieces existed. Everything students build this semester exists because those pieces now do. -->
 
 <!-- end_slide -->
 
@@ -132,7 +100,7 @@ So the leverage moved. If the model is roughly fixed, what is left is **everythi
 
 <!-- new_line -->
 
-> Those four are the rest of the semester. They are also tonight's thesis: **the intelligence you ship lives in the harness, not the model.**
+> **The harness turns model capability into a working product.**
 
 <!-- speaker_note: Present the slowdown as an argument, not settled fact - someone will disagree. The consequence holds either way. -->
 
@@ -214,7 +182,7 @@ FOUR WORDS PEOPLE USE INTERCHANGEABLY
 
 > The dividing line: **who owns control flow.** If you can draw the flowchart before it runs, it is a workflow. If the flowchart is decided while it runs, it is an agent.
 
-<!-- speaker_note: Push on this. Most "AI agents" being sold right now are workflows. That is not an insult — workflows are usually the correct choice. -->
+<!-- speaker_note: Push on this. Most "AI agents" being sold right now are workflows. That is not an insult; workflows are usually the correct choice. -->
 
 <!-- end_slide -->
 
@@ -242,13 +210,13 @@ An LLM is a function. It takes a sequence of tokens and returns a probability di
 
 <!-- new_line -->
 
-**That is the entire mechanism.** Everything else — reasoning, coding, tool use, "agency" — is that loop plus structure around it.
+**That is the entire mechanism.** Everything else (reasoning, coding, tool use, "agency") is that loop plus structure around it.
 
 <!-- pause -->
 
 <!-- new_line -->
 
-> Note the word **sample.** It does not pick the top token every time; it draws from the distribution. That knob is **temperature** — 0 is near-greedy and repeatable, higher is more varied. **This is the root of every "why did it answer differently?" you will ever ask.**
+> Note the word **sample.** It does not pick the top token every time; it draws from the distribution. That knob is **temperature**: 0 is near-greedy and repeatable, higher is more varied. **This is the root of every "why did it answer differently?" you will ever ask.**
 
 <!-- speaker_note: Do NOT let people leave thinking the model is magic. The magic is in the harness. -->
 
@@ -259,7 +227,7 @@ An LLM is a function. It takes a sequence of tokens and returns a probability di
 TOKENS
 ===
 
-<span class="muted">Models do not read characters or words. Text is chopped into **tokens** — frequent chunks learned from the training data. Roughly **4 characters, or ¾ of a word**, in English.</span>
+<span class="muted">Models do not read characters or words. Text is chopped into **tokens**, frequent chunks learned from the training data. Roughly **4 characters, or ¾ of a word**, in English.</span>
 
 <!-- new_line -->
 
@@ -297,7 +265,7 @@ TOKENS
 
 **IT EXPLAINS THE QUIRKS**
 
-<span class="muted">Bad at counting letters in a word or doing digit-level math — it never saw the letters.</span>
+<span class="muted">Bad at counting letters in a word or doing digit-level math: it never saw the letters.</span>
 
 <!-- reset_layout -->
 
@@ -532,42 +500,29 @@ THE FIVE PARTS OF ANY AGENT
 WHAT IS A "HARNESS"?
 ===
 
-<span class="muted">The word gets used constantly and defined almost never. It is simply: **all the ordinary code that surrounds the model call.**</span>
+<span class="muted">The ordinary code surrounding the model call.</span>
 
 <!-- new_line -->
 
-<!-- column_layout: [1, 1] -->
+```text
+  +------------------------ HARNESS -------------------------+
+  |                                                         |
+  |  Assemble context --> [ MODEL ] --request--> Guardrails   |
+  |         ^             stateless                 |       |
+  |         |                                  allow / deny |
+  |         +---------- result <----------- Execute tool    |
+  |                                                         |
+  |  Turn limits | Retries | Timeouts | Rate limits | Logs    |
+  +---------------------------------------------------------+
+```
 
-<!-- column: 0 -->
-
-<span class="badge"> THE HARNESS OWNS </span>
-
-<span class="muted">— The **loop** and its turn limit</span>
-<span class="muted">— **Executing** tool calls the model requests</span>
-<span class="muted">— **Retries**, timeouts, rate limits</span>
-<span class="muted">— **Guardrails**: what is allowed to run at all</span>
-<span class="muted">— **Logging** every turn so you can debug</span>
-<span class="muted">— Assembling context: what to send, what to drop</span>
-
-<!-- column: 1 -->
-
-<span class="badge"> WHY IT MATTERS </span>
-
-The model is a **stateless function you rent.** It has no memory, no permissions, no ability to run anything.
-
-<!-- new_line -->
-
-Every safety property your system has, the harness enforces — because **the model can only ask.**
-
-<!-- new_line -->
-
-<span class="muted">Claude Code is a harness. Cursor is a harness. The 12 lines you will see in tonight's demo are a harness.</span>
-
-<!-- reset_layout -->
+**The model asks. The harness permits and executes.**
 
 <!-- pause -->
 
 > Same model, different harness, wildly different product. **That gap is where your engineering goes.**
+
+<!-- speaker_note: Harness means all the ordinary code surrounding the model call. It owns the loop and turn limit, executing requested tools, retries, timeouts, rate limits, guardrails, logging every turn for debugging, and assembling context by deciding what to send or drop. The model is a stateless function you rent, with no memory, permissions, or ability to execute anything itself. Safety properties must be enforced by the harness because the model can only ask. A denied request returns feedback without executing the tool. Claude Code is a harness. Cursor is a harness. The 12 lines in tonight's demo are a harness. Same model, different harness, wildly different product - that gap is where your engineering goes. -->
 
 <!-- end_slide -->
 
@@ -728,15 +683,15 @@ Because you resend it all each turn, a 12-step run pays for step 1's context **t
 
 <span class="badge"> MITIGATIONS </span>
 
-<span class="muted">— Return **compact** tool results, not raw dumps</span>
+<span class="muted">- Return **compact** tool results, not raw dumps</span>
 
-<span class="muted">— Summarize or truncate old turns</span>
+<span class="muted">- Summarize or truncate old turns</span>
 
-<span class="muted">— Retrieve on demand instead of preloading (RAG, Sep 21)</span>
+<span class="muted">- Retrieve on demand instead of preloading (RAG, Sep 21)</span>
 
-<span class="muted">— Put critical rules **last**, not first</span>
+<span class="muted">- Put critical rules **last**, not first</span>
 
-<span class="muted">— Hard cap the turn count</span>
+<span class="muted">- Hard cap the turn count</span>
 
 <!-- reset_layout -->
 
@@ -804,39 +759,19 @@ A PROMPT IS A PROGRAM
 THE THREE ROLES
 ===
 
-<!-- column_layout: [1, 1, 1] -->
-
-<!-- column: 0 -->
-
-<span class="accent">**SYSTEM**</span>
-
-Who the model is, its rules, its constraints, its tools.
-
-<span class="muted">Set once. Highest leverage text in your whole application.</span>
-
-<!-- column: 1 -->
-
-<span class="accent">**USER**</span>
-
-The task and the data for this specific request.
-
-<span class="muted">Changes every call. Keep instructions out of here.</span>
-
-<!-- column: 2 -->
-
-<span class="accent">**ASSISTANT**</span>
-
-What the model said — and what you can **prefill** to steer it.
-
-<span class="muted">Tool calls and tool results live in this transcript too.</span>
-
-<!-- reset_layout -->
+| Role | Carries | Lifetime |
+|---|---|---|
+| **SYSTEM** | Identity, rules, constraints, tools | Standing policy |
+| **USER** | Task + data | This request |
+| **ASSISTANT** | Model replies; optional prefill | Conversation history |
 
 <!-- pause -->
 
 <!-- new_line -->
 
-> Common beginner bug: cramming standing rules into every user message. Rules go in **system**. Data goes in **user**. Mixing them is why your prompt "randomly stopped working."
+> **Rules in system. Data in user.** Keep standing policy separate from each request.
+
+<!-- speaker_note: System defines who the model is, its rules, constraints, and tools. Set that policy once - it is the highest-leverage text in the application. User carries the task and data for the specific request and changes every call. Keep standing instructions in system rather than cramming them into every user message. Assistant contains what the model said, and an optional prefill can steer its response. Tool calls and tool results also live in the conversation transcript, with their exact message roles depending on the API. Mixing standing rules with request data is the beginner bug behind prompts that seem to randomly stop working. -->
 
 <!-- end_slide -->
 
@@ -855,7 +790,7 @@ BE SPECIFIC. RUTHLESSLY.
 Summarize this feedback.
 ```
 
-<span class="muted">Summarize for whom? How long? What matters — bugs? sentiment? feature asks? What format? The model will pick for you, differently each time.</span>
+<span class="muted">Summarize for whom? How long? What matters: bugs? sentiment? feature asks? What format? The model will pick for you, differently each time.</span>
 
 <!-- column: 1 -->
 
@@ -959,7 +894,7 @@ one sentence of justification.
 
 <!-- pause -->
 
-<span class="muted">Modern reasoning models do much of this internally — but structured thinking still helps, and the tags make the output **parseable and auditable.**</span>
+<span class="muted">Modern reasoning models do much of this internally, but structured thinking still helps, and the tags make the output **parseable and auditable.**</span>
 
 <!-- end_slide -->
 
@@ -972,7 +907,7 @@ CONSTRAIN THE OUTPUT
 
 <!-- new_line -->
 
-<span class="bad">**✘**</span> `"Give me the results as JSON"` <span class="muted">— you will get prose, then a fenced block, then an apology.</span>
+<span class="bad">**✘**</span> `"Give me the results as JSON"` <span class="muted">gets you prose, then a fenced block, then an apology.</span>
 
 <!-- new_line -->
 
@@ -981,7 +916,7 @@ CONSTRAIN THE OUTPUT
 <span class="muted">**1.** State the exact schema, with field types and an example</span>
 <span class="muted">**2.** `"Respond with only the JSON object. No preamble, no code fences."`</span>
 <span class="muted">**3.** Prefill the assistant turn with `{` so it cannot start with prose</span>
-<span class="muted">**4.** Use the API's structured-output / tool-schema mode — the model is constrained at **decode time** and cannot emit invalid JSON</span>
+<span class="muted">**4.** Use the API's structured-output / tool-schema mode: the model is constrained at **decode time** and cannot emit invalid JSON</span>
 
 <!-- pause -->
 
@@ -1068,7 +1003,7 @@ PROMPTING FOR AGENTS IS DIFFERENT
 
 <!-- reset_layout -->
 
-<span class="muted">Say what it does, what it returns, **when to reach for it**, and — critically — what it does **not** cover. Part 04 is entirely about getting this right.</span>
+<span class="muted">Say what it does, what it returns, **when to reach for it**, and, critically, what it does **not** cover. Part 04 is entirely about getting this right.</span>
 
 <!-- end_slide -->
 
@@ -1117,7 +1052,7 @@ THINGS THAT DO NOT WORK
 <span class="muted">"please please be accurate" is not a spec</span>
 
 <span class="bad">✘</span> **Threats and bribes**
-<span class="muted">"I'll tip $200" — measure it; it is noise</span>
+<span class="muted">"I'll tip $200": measure it; it is noise</span>
 
 <span class="bad">✘</span> **Contradictory rules**
 <span class="muted">"be thorough but under 50 words"</span>
@@ -1161,7 +1096,7 @@ FOUR STEPS, AND YOU OWN THREE
   1. DECLARE     you send tool schemas alongside the prompt
                  ─────────────────────────────────────────────────────────
   2. REQUEST     model replies stop_reason="tool_use" + name + JSON args
-                 (it did NOT run anything — it asked)
+                 (it did NOT run anything; it asked)
                  ─────────────────────────────────────────────────────────
   3. EXECUTE     YOUR code validates the args and runs the function
                  (permissions, allow-lists, confirmation prompts live here)
@@ -1202,7 +1137,7 @@ WHAT MAKES A GOOD TOOL
 }
 ```
 
-<span class="muted">Unbounded. The model writes raw SQL, you run it. Name says nothing. One typo is a table scan — or a `DROP`.</span>
+<span class="muted">Unbounded. The model writes raw SQL, you run it. Name says nothing. One typo is a table scan or a `DROP`.</span>
 
 <!-- column: 1 -->
 
@@ -1257,7 +1192,7 @@ HOW MANY, AND HOW BIG
 
 **One tool per user intent.**
 
-<span class="muted">Not one per endpoint. `book_appointment` beats `check_slots` + `hold_slot` + `confirm` — three tools is three chances to stop halfway.</span>
+<span class="muted">Not one per endpoint. `book_appointment` beats `check_slots` + `hold_slot` + `confirm`: three tools is three chances to stop halfway.</span>
 
 <!-- column: 2 -->
 
@@ -1265,7 +1200,7 @@ HOW MANY, AND HOW BIG
 
 **One turn can request several.**
 
-<span class="muted">Independent lookups come back in a single `tool_use` block. Execute them concurrently and return all results together — one round trip, not three.</span>
+<span class="muted">Independent lookups come back in a single `tool_use` block. Execute them concurrently and return all results together: one round trip, not three.</span>
 
 <!-- reset_layout -->
 
@@ -1273,7 +1208,7 @@ HOW MANY, AND HOW BIG
 
 <!-- new_line -->
 
-> Overlapping tools are worse than missing ones. If two tools could plausibly answer the same question, the model will flip between them — and you will call it "flaky."
+> Overlapping tools are worse than missing ones. If two tools could plausibly answer the same question, the model will flip between them, and you will call it "flaky."
 
 <!-- end_slide -->
 
@@ -1282,7 +1217,7 @@ HOW MANY, AND HOW BIG
 WHAT TO RETURN WHEN A TOOL FAILS
 ===
 
-<span class="muted">The tool result is not a log line — it is **the next thing the model reads.** Write it for the model.</span>
+<span class="muted">The tool result is not a log line. It is **the next thing the model reads.** Write it for the model.</span>
 
 <!-- new_line -->
 
@@ -1298,7 +1233,7 @@ WHAT TO RETURN WHEN A TOOL FAILS
 
 <!-- new_line -->
 
-> An empty result and a broken tool look **identical** to the model, so it fills the gap with something plausible. Say what went wrong and whether retrying helps — then it can actually recover.
+> An empty result and a broken tool look **identical** to the model, so it fills the gap with something plausible. Say what went wrong and whether retrying helps; then it can actually recover.
 
 <!-- end_slide -->
 
@@ -1312,17 +1247,17 @@ FOUR WAYS TO GET JSON, RANKED
 | **L1** | Ask for JSON in the prompt | None. Prose, fences, apologies |
 | **L2** | Ask + give the exact schema + one example | Better. Still fails under load |
 | **L3** | Prefill the assistant turn with `{` | It cannot open with prose |
-| **L4** | **Schema-constrained decoding** — structured output / tool-schema mode | **Invalid JSON is unrepresentable** |
+| **L4** | **Schema-constrained decoding**: structured output / tool-schema mode | **Invalid JSON is unrepresentable** |
 
 <!-- pause -->
 
 <!-- new_line -->
 
-<span class="muted">L4 is not better prompting — it is a different mechanism. The decoder masks every token that would break the schema, so malformed output is not unlikely, it is **impossible.**</span>
+<span class="muted">L4 is not better prompting; it is a different mechanism. The decoder masks every token that would break the schema, so malformed output is not unlikely, it is **impossible.**</span>
 
 <!-- new_line -->
 
-> If a program parses it, use L4. Keep L2 as a habit anyway — a clear schema in the prompt still improves the *content*, not just the shape.
+> If a program parses it, use L4. Keep L2 as a habit anyway: a clear schema in the prompt still improves the *content*, not just the shape.
 
 <!-- end_slide -->
 
@@ -1403,7 +1338,7 @@ DEMO: 40 LINES
 THE WHOLE AGENT
 ===
 
-<span class="muted">This is the real structure. LangChain, LangGraph, the Agents SDK — all of them are this, with retries and telemetry bolted on.</span>
+<span class="muted">One loop connects all five parts.</span>
 
 ```python
 def run_agent(goal, tools, max_turns=10):
@@ -1429,7 +1364,9 @@ def run_agent(goal, tools, max_turns=10):
 
 <!-- pause -->
 
-<span class="muted">Twelve real lines. Every one of the five parts is labeled. There is nothing else hiding.</span>
+<span class="muted">Frameworks add retries, telemetry, and orchestration.</span>
+
+<!-- speaker_note: Walk through the five numbered parts in the code. LangChain, LangGraph, and the Agents SDK add engineering around this same core loop. -->
 
 <!-- end_slide -->
 
@@ -1438,7 +1375,7 @@ def run_agent(goal, tools, max_turns=10):
 WATCH THE LOOP SPIN
 ===
 
-<span class="muted">Real loop, fake model — a stub that returns scripted tool calls, so the mechanics are visible with no API key and no network. Press `Ctrl-E` to run.</span>
+<span class="muted">Real loop. Scripted model. Offline and deterministic.</span>
 
 ```python +exec
 import sys; sys.path.insert(0, "demo")
@@ -1446,7 +1383,7 @@ from mini_agent import run_agent
 run_agent("What was the high in Champaign yesterday, in Celsius?")
 ```
 
-<!-- speaker_note: If exec is not enabled you will see a "not started" status. Launch with scripts/present.sh 01, which passes -x. Fallback is running `python demo/mini_agent.py` in a second terminal. -->
+<!-- speaker_note: Press Ctrl-E to run. A stub returns scripted tool calls so the mechanics are visible without an API key or network. If exec is not enabled you will see a "not started" status. Launch with scripts/present.sh 01, which passes -x. Fallback is running `python demo/mini_agent.py` in a second terminal. -->
 
 <!-- end_slide -->
 
@@ -1461,7 +1398,7 @@ WHAT YOU JUST SAW
 
 **2.** The model made three decisions: <span class="muted">which tool, what arguments, when to stop.</span>
 
-**3.** The conversation **grew every turn** — that is the cost curve, and that is context rot in miniature.
+**3.** The conversation **grew every turn**: that is the cost curve, and that is context rot in miniature.
 
 **4.** A `max_turns` cap was the only thing standing between you and an infinite loop.
 
@@ -1469,7 +1406,9 @@ WHAT YOU JUST SAW
 
 <!-- new_lines: 2 -->
 
-> Swap the fake model for a real API call and the tools for real functions, and you have shipped an agent. **Everything after tonight is making that loop reliable.**
+> **The next challenge is making the loop reliable.**
+
+<!-- speaker_note: Replace the scripted model with a real API call and the tools with real functions to connect this loop to a live agent. The rest of the course is about reliability, evaluation, and safe execution. -->
 
 <!-- end_slide -->
 
@@ -1489,7 +1428,7 @@ THE EIGHT THINGS
 
 <!-- new_line -->
 
-<span class="accent">**01**</span>  An LLM is a next-token function that **samples**. Same input, different output — by design.
+<span class="accent">**01**</span>  An LLM is a next-token function that **samples**. Same input, different output, by design.
 
 <span class="accent">**02**</span>  **Tokens are the unit of everything.** Cost, context limits, and half the model's quirks.
 
@@ -1501,7 +1440,7 @@ THE EIGHT THINGS
 
 <span class="accent">**06**</span>  A prompt is a program: **be specific, show examples, leave room to think, constrain output, give it an exit.**
 
-<span class="accent">**07**</span>  **The model never runs anything — it asks.** Your step 3 is where every guardrail lives.
+<span class="accent">**07**</span>  **The model never runs anything; it asks.** Your step 3 is where every guardrail lives.
 
 <span class="accent">**08**</span>  Tool calling and structured outputs are **one mechanism**: schema-constrained decoding. Tighten the schema, sharpen the description.
 
@@ -1520,7 +1459,7 @@ HOMEWORK
 
 **1. Install Claude Code.** <span class="muted">Thursday is laptop-open. Show up ready.</span>
 
-**2. Find the workflow.** <span class="muted">Pick a repetitive task you actually do. Write the steps out by hand. Bring it Thursday — that is your build target.</span>
+**2. Find the workflow.** <span class="muted">Pick a repetitive task you actually do. Write the steps out by hand. Bring it Thursday; that is your build target.</span>
 
 **3. Break a prompt on purpose.** <span class="muted">Write a vague prompt, run it 5 times, watch the outputs diverge. Then fix it with Rule 01.</span>
 
@@ -1530,17 +1469,17 @@ HOMEWORK
 
 <span class="badge"> READ </span>
 
-<span class="muted">— Anthropic, **Building Effective Agents** <span class="dim">(the workflow/agent split, from the source)</span></span>
+<span class="muted">- Anthropic, **Building Effective Agents** <span class="dim">(the workflow/agent split, from the source)</span></span>
 
-<span class="muted">— **ReAct: Synergizing Reasoning and Acting in Language Models** <span class="dim">(Yao et al., 2022 — short, readable)</span></span>
+<span class="muted">- **ReAct: Synergizing Reasoning and Acting in Language Models** <span class="dim">(Yao et al., 2022; short, readable)</span></span>
 
-<span class="muted">— Anthropic docs — **Tool use** and **structured outputs** <span class="dim">(the reference for Part 04)</span></span>
+<span class="muted">- Anthropic docs: **Tool use** and **structured outputs** <span class="dim">(the reference for Part 04)</span></span>
 
 <!-- reset_layout -->
 
 <!-- new_line -->
 
-> Thursday Sep 10 · **Business Workflow Automation 101** — you will build the thing you scoped in homework #2.
+> Thursday Sep 10 · **Business Workflow Automation 101**: you will build the thing you scoped in homework #2.
 
 <!-- end_slide -->
 
@@ -1551,14 +1490,14 @@ WHERE THIS GOES
 
 | Upcoming lecture | What it unlocks |
 |---|---|
-| **RAG + advanced RAG** <span class="accent">— next week</span> | Agents that know *your* data |
-| Memory — short, long, hybrid | Agents that persist across sessions |
+| **RAG + advanced RAG** <span class="accent">(next week)</span> | Agents that know *your* data |
+| Memory: short, long, hybrid | Agents that persist across sessions |
 | Multi-agent architectures | Splitting work across specialists |
 | Context + harness engineering | The fix for context rot |
 | Graph + loop engineering | Iterative execution you can reason about |
 | Eval systems for agents | Knowing it works before users do |
 
-<span class="muted">Then post-training and distillation · preference optimization, GRPO and RL · voice agents — ending **Dec 07** with the Final Project Studio + Demo Night.</span>
+<span class="muted">Then post-training and distillation · preference optimization, GRPO and RL · voice agents, ending **Dec 07** with the Final Project Studio + Demo Night.</span>
 
 <!-- end_slide -->
 
@@ -1567,7 +1506,7 @@ WHERE THIS GOES
 QUESTIONS?
 ===
 
-<span class="muted">Then stick around — the fastest way to learn this is to start building tonight.</span>
+<!-- speaker_note: Invite students to stay after the talk and start building. -->
 
 <!-- new_lines: 2 -->
 

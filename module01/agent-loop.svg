@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-label="The agent loop: model, tool, result" aria-describedby="loop-description">
+  <desc id="loop-description">The model chooses a tool, code executes it, and the result returns to the model to inform the next decision.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#f25c14"/>
+    </marker>
+  </defs>
+  <g fill="#141414" stroke="#555" stroke-width="1.5">
+    <rect x="25" y="25" width="230" height="140" rx="12"/>
+    <rect x="335" y="25" width="230" height="140" rx="12"/>
+    <rect x="645" y="25" width="230" height="140" rx="12"/>
+  </g>
+  <g fill="none" stroke="#f25c14" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M 263 95 H 326"/>
+    <path d="M 573 95 H 636"/>
+    <path d="M 760 175 V 219 H 140 V 175"/>
+  </g>
+  <g fill="none" stroke="#f25c14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(120 42)">
+      <path d="M 4 4 L 20 20 L 36 4 M 4 36 L 20 20 L 36 36"/>
+      <circle cx="4" cy="4" r="4" fill="#141414"/>
+      <circle cx="36" cy="4" r="4" fill="#141414"/>
+      <circle cx="20" cy="20" r="4" fill="#141414"/>
+      <circle cx="4" cy="36" r="4" fill="#141414"/>
+      <circle cx="36" cy="36" r="4" fill="#141414"/>
+    </g>
+    <g transform="translate(430 42)">
+      <path d="M 10 7 L 0 20 L 10 33 M 30 7 L 40 20 L 30 33 M 26 0 L 14 40"/>
+    </g>
+    <g transform="translate(740 42)">
+      <rect x="4" y="0" width="32" height="40" rx="4"/>
+      <path d="M 12 13 H 28 M 12 21 H 28 M 12 29 H 22"/>
+    </g>
+  </g>
+  <g font-family="monospace" text-anchor="middle">
+    <g fill="#f2f2f2" font-size="26" font-weight="bold" letter-spacing="2">
+      <text x="140" y="119">MODEL</text>
+      <text x="450" y="119">TOOL</text>
+      <text x="760" y="119">RESULT</text>
+    </g>
+    <g fill="#aaa" font-size="14">
+      <text x="140" y="144">CHOOSE</text>
+      <text x="450" y="144">EXECUTE</text>
+      <text x="760" y="144">OBSERVE</text>
+    </g>
+    <rect x="353" y="205" width="194" height="27" fill="#0d0d0d"/>
+    <text x="450" y="225" fill="#f25c14" font-size="14" letter-spacing="2">NEXT DECISION</text>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+# Projector sizing: larger text and graphics across the deck.
+export:
+  dimensions:
+    columns: 120
+    rows: 34
+  pauses: new_slide
+  snippets: sequential
+snippet:
+  exec:
+    enable: true
