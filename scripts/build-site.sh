@@ -121,7 +121,7 @@ HTML
 <div class="bar"><strong>AGENTIC AI @ UIUC</strong><span class="right"><span>$SITE_TERM</span>$LINKTREE</span></div>
 <div class="kicker">/// LECTURE SERIES</div>
 <h1>Lecture decks</h1>
-<p class="lede">Every Monday lecture, exported straight from the terminal deck we present from. Each module has its own page.</p>
+<p class="lede">Our weekly lectures can be viewed below!</p>
 <div class="grid">$cards</div>
 <footer>AGENTIC AI @ UIUC · <a href="https://agenticaiuiuc.com">AGENTICAIUIUC.COM</a></footer>
 </div></body></html>
