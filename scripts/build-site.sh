@@ -13,6 +13,8 @@ rm -rf "$OUT"; mkdir -p "$OUT"
 
 SITE_NAME="Agentic AI @ UIUC"
 SITE_TERM="FALL 2026"
+INSTAGRAM='<a class="icon" href="https://www.instagram.com/agenticaiuiuc" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>'
+LINKEDIN='<a class="icon" href="https://www.linkedin.com/company/agentic-ai-uiuc" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7"/><circle cx="8" cy="7" r="1" fill="currentColor" stroke="none"/><path d="M12 17v-7"/><path d="M12 13c0-1.7 1.1-3 2.5-3S17 11.3 17 13v4"/></svg></a>'
 LINKTREE='<a class="icon" href="https://linktr.ee/agenticaiuiuc" target="_blank" rel="noopener" aria-label="Linktree" title="Linktree"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 11 6 5"/><path d="M12 11l6-6"/><path d="M4 11h16"/><path d="M12 14v6"/></svg></a>' 
 
 # Brand tokens, mirrored from shared/theme/agentic-ai.yaml.
@@ -30,7 +32,7 @@ cat <<'CSS'
        font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
   .bar a{color:var(--dim);text-decoration:none}
   .bar a:hover{color:var(--orange)}
-  .bar .right{display:flex;align-items:center;gap:14px}
+  .bar .left,.bar .right{display:flex;align-items:center;gap:14px}
   .bar .icon{display:flex;color:var(--dim)}
   .bar .icon svg{width:17px;height:17px;display:block}
   .kicker{color:var(--orange);font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -83,7 +85,7 @@ HTML
     css
     cat <<HTML
 </head><body><div class="wrap">
-<div class="bar"><a href="../">← ALL LECTURES</a><span class="right"><span>$SITE_TERM</span>$LINKTREE</span></div>
+<div class="bar"><a href="../">← ALL LECTURES</a><span class="right"><span>$SITE_TERM</span>$INSTAGRAM$LINKEDIN$LINKTREE</span></div>
 <div class="kicker">/// ${name/module/MODULE }</div>
 <h1>${headline:-$name}</h1>
 <p class="lede">${sub:-}</p>
@@ -106,7 +108,7 @@ HTML
   css
   cat <<HTML
 </head><body><div class="wrap">
-<div class="bar"><strong>AGENTIC AI @ UIUC</strong><span class="right"><span>$SITE_TERM</span>$LINKTREE</span></div>
+<div class="bar"><span class="left"><strong>AGENTIC AI @ UIUC</strong>$INSTAGRAM$LINKEDIN$LINKTREE</span><span>$SITE_TERM</span></div>
 <div class="kicker">/// LECTURE SERIES</div>
 <h1>Lecture decks</h1>
 <p class="lede">Our weekly lectures can be viewed below!</p>
