@@ -1,0 +1,9 @@
+# Smallest terminal we are willing to present at. If a slide fits here, it fits
+# on the projector at any reasonable font size.
+export:
+  dimensions:
+    columns: 100
+    rows: 30
+snippet:
+  exec:
+    enable: true

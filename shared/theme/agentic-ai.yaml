@@ -1,0 +1,204 @@
+---
+# Agentic AI @ UIUC — presenterm theme
+# Matches the deck system: near-black canvas, orange accent, white condensed
+# headings, muted gray body copy, monospace kickers and labels.
+
+default:
+  margin:
+    percent: 6
+  colors:
+    foreground: palette:text
+    background: palette:bg
+
+intro_slide:
+  title:
+    alignment: left
+    colors:
+      foreground: palette:text
+    font_size: 3
+  sub_title:
+    alignment: left
+    colors:
+      foreground: palette:muted
+  event:
+    alignment: left
+    colors:
+      foreground: palette:orange
+  location:
+    alignment: left
+    colors:
+      foreground: palette:muted
+  date:
+    alignment: left
+    colors:
+      foreground: palette:orange
+  author:
+    alignment: left
+    colors:
+      foreground: palette:muted
+    positioning: below_title
+  footer: true
+
+slide_title:
+  alignment: left
+  padding_top: 0
+  padding_bottom: 1
+  # No rule under the title. The separator inherits the title's foreground, so a
+  # white title draws a bright full-width line the brand system does not have.
+  separator: false
+  bold: true
+  font_size: 2
+  colors:
+    foreground: palette:text
+
+headings:
+  h1:
+    prefix: "///"
+    colors:
+      foreground: palette:orange
+  h2:
+    prefix: "──"
+    colors:
+      foreground: palette:text
+  h3:
+    prefix: "  ▸"
+    colors:
+      foreground: palette:orange
+  h4:
+    prefix: "   ·"
+    colors:
+      foreground: palette:muted
+  h5:
+    prefix: "   ·"
+    colors:
+      foreground: palette:muted
+  h6:
+    prefix: "   ·"
+    colors:
+      foreground: palette:muted
+
+block_quote:
+  prefix: "▍ "
+  colors:
+    foreground: palette:text
+    background: palette:card
+    prefix: palette:orange
+
+alert:
+  prefix: "▍ "
+  base_colors:
+    foreground: palette:text
+    background: palette:card
+  styles:
+    note:
+      color: palette:blue
+    tip:
+      color: palette:green
+    important:
+      color: palette:orange
+    warning:
+      color: palette:amber
+    caution:
+      color: palette:red
+
+inline_code:
+  colors:
+    foreground: palette:orange_light
+    background: palette:card
+
+code:
+  alignment: left
+  minimum_size: 50
+  minimum_margin:
+    percent: 6
+  theme_name: base16-eighties.dark
+  padding:
+    horizontal: 2
+    vertical: 1
+
+execution_output:
+  colors:
+    foreground: palette:text
+    background: palette:card
+  status:
+    running:
+      foreground: palette:amber
+    success:
+      foreground: palette:green
+    failure:
+      foreground: palette:red
+    not_started:
+      foreground: palette:muted
+  padding:
+    horizontal: 2
+    vertical: 1
+
+pty_output:
+  colors:
+    foreground: palette:text
+    background: palette:card
+  cursor:
+    highlight_colors:
+      foreground: palette:card
+      background: palette:text
+
+footer:
+  style: template
+  height: 2
+  left: "<span style=\"color: palette:dim\">AGENTIC AI @ UIUC · AGENTICAIUIUC.COM</span>"
+  right: "<span style=\"color: palette:orange\">{current_slide}</span><span style=\"color: palette:dim\"> / {total_slides}</span>"
+
+modals:
+  selection_colors:
+    foreground: palette:orange
+    background: palette:card
+
+mermaid:
+  background: transparent
+  theme: dark
+
+d2:
+  theme: 200
+
+layout_grid:
+  color: palette:border
+
+palette:
+  colors:
+    bg: "0d0d0d"
+    card: "1a1a1a"
+    border: "2e2e2e"
+    text: "f2f2f2"
+    muted: "9a9a9a"
+    dim: "6b6b6b"
+    orange: "f25c14"
+    orange_light: "ff8a4c"
+    amber: "e8a33d"
+    green: "6fcf70"
+    red: "ef5350"
+    blue: "5aa9e6"
+  classes:
+    kicker:
+      foreground: "f25c14"
+      background: "0d0d0d"
+    muted:
+      foreground: "9a9a9a"
+      background: "0d0d0d"
+    dim:
+      foreground: "6b6b6b"
+      background: "0d0d0d"
+    badge:
+      foreground: "0d0d0d"
+      background: "f25c14"
+    tag:
+      foreground: "9a9a9a"
+      background: "1a1a1a"
+    good:
+      foreground: "6fcf70"
+      background: "0d0d0d"
+    bad:
+      foreground: "ef5350"
+      background: "0d0d0d"
+    accent:
+      foreground: "f25c14"
+      background: "0d0d0d"

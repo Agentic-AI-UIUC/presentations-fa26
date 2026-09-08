@@ -1,0 +1,28 @@
+---
+# Shared presenterm config for every Agentic AI @ UIUC deck.
+# Used by scripts/present.sh (live) and scripts/build-site.sh (CI export).
+
+defaults:
+  theme: dark
+  image_protocol: auto
+
+options:
+  end_slide_shorthand: false
+  implicit_slide_ends: false
+  strict_front_matter_parsing: true
+
+snippet:
+  exec:
+    # Required for `+exec` demo slides. Only ever runs code you wrote.
+    enable: true
+
+export:
+  # Fixed page size makes exports reproducible and, critically, lets the
+  # export run with no TTY attached — which is what GitHub Actions gives us.
+  dimensions:
+    columns: 160
+    rows: 46
+  # Each `<!-- pause -->` becomes its own page, so the exported deck reveals
+  # the same way the live one does.
+  pauses: new_slide
+  snippets: sequential
