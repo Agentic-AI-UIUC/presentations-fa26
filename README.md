@@ -37,7 +37,8 @@ Nothing else. Demos are stdlib-only Python with no API keys and no network.
 ## Present
 
 ```bash
-scripts/present.sh 01
+scripts/present.sh 01            # a module by number
+scripts/present.sh 54-workshop   # any other deck by directory name
 ```
 
 | Key | Action |
@@ -152,4 +153,5 @@ in seconds. Bumping the version invalidates the cache and recompiles once.
 
 | Deck | Covers |
 |---|---|
+| `54-workshop` | Founders 54 hackathon workshop, 45 minutes, hands-on in Cursor. Why demos die (drift or damage), the three files that fix it (rule, skill, hook), a live self-check of the guard hook, Spotify's production version of the same pattern, a twelve-minute clone-and-customize block, and the pitch table plus video rule for Sunday. Companion repo is `Agentic-AI-UIUC/54-workshop`. Present with `scripts/present.sh 54-workshop`. |
 | `module01` | Agentic AI foundations, prompting, and tool calling. Opens with why agents now (the 2022-26 arc, the plateau argument, where they already work), then what an LLM does, tokens and sampling, agent vs workflow, the harness, the ReAct loop, context and failure modes, six prompting rules, tool calling and structured outputs, and a live 40-line agent demo. ~90 pages with reveals; 60 minutes if you keep moving, and the cut order is in the first slide's speaker note. |
