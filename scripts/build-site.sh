@@ -94,7 +94,7 @@ HTML
     cat <<HTML
 </head><body><div class="wrap">
 <div class="bar"><a href="../">← ALL LECTURES</a><span>$SITE_TERM</span></div>
-<div class="kicker">/// ${name/module/MODULE }</div>
+<div class="kicker">/// $(printf '%s' "${name/module/MODULE }" | tr 'a-z-' 'A-Z ')</div>
 <h1>${headline:-$name}</h1>
 <p class="lede">${sub:-}</p>
 <a class="cta" href="deck.html">OPEN THE DECK →</a>
