@@ -6,5 +6,10 @@ PRESENTERM="${PRESENTERM:-$(command -v presenterm || echo "$HOME/.cargo/bin/pres
 
 [ -x "$PRESENTERM" ] || { echo "presenterm not found. cargo install presenterm" >&2; exit 1; }
 
-# Every moduleNN/moduleNN.md, in order.
-decks() { find "$ROOT" -mindepth 2 -maxdepth 2 -name 'module*.md' | sort; }
+# Every <dir>/<dir>.md deck (module01/module01.md, 54-workshop/54-workshop.md), in order.
+decks() {
+  for d in "$ROOT"/*/; do
+    d="${d%/}"; f="$d/$(basename "$d").md"
+    [ -f "$f" ] && echo "$f"
+  done | sort
+}
