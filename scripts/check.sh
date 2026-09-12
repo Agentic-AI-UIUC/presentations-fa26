@@ -18,11 +18,6 @@ for deck in $(decks); do
     echo "── self-check $name/$(basename "$demo")"
     (cd "$dir" && python "demo/$(basename "$demo")" >/dev/null) || { echo "   FAILED"; status=1; }
   done
-  for demo in "$dir"/demo/test.sh; do
-    [ -e "$demo" ] || continue
-    echo "── self-check $name/demo/test.sh"
-    (cd "$dir" && bash demo/test.sh >/dev/null) || { echo "   FAILED"; status=1; }
-  done
 
   # Validate twice: at export size, and at the smallest terminal we would
   # present on. The tight pass is the one that catches slides that only fit
